@@ -1,0 +1,51 @@
+@import '../../../../styles/variables';
+
+.footer {
+  border-top: 1px solid $color-line;
+  margin-top: 80px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    height: 64px;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: $color-signal-dark;
+  }
+
+  &__link {
+    font-size: 13px;
+    color: $color-ink-secondary;
+    transition: color $transition;
+
+    &:hover {
+      color: $color-signal;
+    }
+  }
+
+  &__backToTop {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid $color-line;
+    border-radius: $radius-s;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: border-color $transition, color $transition;
+
+    &:hover {
+      border-color: $color-signal;
+      color: $color-signal;
+    }
+  }
+}
