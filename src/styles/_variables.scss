@@ -1,6 +1,4 @@
-// Palette — "workshop ledger" direction: warm paper background,
-// graphite ink, and a single signal-blue accent used for actions,
-// prices and interactive states.
+// Palette — sampled from the real Figma "Original Dark" design export.
 // Colors resolve to CSS custom properties (defined in global.scss)
 // so that toggling [data-theme] recolors every component that uses
 // these SCSS variables, not just the ones that reference var() directly.
@@ -11,14 +9,21 @@ $color-ink-secondary: var(--color-ink-secondary);
 $color-line: var(--color-line);
 $color-signal: var(--color-signal);
 $color-signal-dark: var(--color-signal-dark);
+$color-signal-pressed: var(--color-signal-pressed);
 $color-discount: var(--color-discount);
 $color-success: var(--color-success);
-$font-display: 'Space Grotesk', 'Arial Narrow', sans-serif;
+$color-icon: var(--color-icon);
+
+$font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-$font-mono: 'JetBrains Mono', 'Courier New', monospace;
+$font-mono: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
 $width-content: 1200px;
+
 $radius-s: 4px;
 $radius-m: 8px;
+
 $transition: 0.2s ease;
+
 $breakpoint-tablet: 640px;
 $breakpoint-desktop: 1024px;

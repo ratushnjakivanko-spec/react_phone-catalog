@@ -3,8 +3,24 @@
 .page {
   padding: 32px 16px 64px;
 
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: $color-ink-secondary;
+    font-size: 13px;
+    margin-bottom: 16px;
+    padding: 0;
+
+    &:hover {
+      color: $color-signal;
+    }
+  }
+
   &__title {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 24px;
   }
 
@@ -35,7 +51,7 @@
   &__total {
     font-family: $font-mono;
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 4px;
   }
 

@@ -5,6 +5,7 @@ export type CategoryName = 'phones' | 'tablets' | 'accessories';
 // sliders, sorting/pagination).
 export type Product = {
   id: string; // = itemId from products.json, also used as the route param
+  numericId: number; // raw numeric id from products.json, shown as "ID: ..."
   category: CategoryName;
   name: string;
   fullPrice: number;

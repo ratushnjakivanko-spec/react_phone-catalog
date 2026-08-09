@@ -49,24 +49,24 @@
   }
 
   &__step {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid $color-line;
-  border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-line;
+    border-radius: 50%;
 
-  &:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
+    &:hover:not(:disabled) {
+      border-color: $color-signal;
+      color: $color-signal;
+    }
 
-  &:hover:not(:disabled) {
-    border-color: $color-signal;
-    color: $color-signal;
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
   }
-}
 
   &__count {
     min-width: 16px;

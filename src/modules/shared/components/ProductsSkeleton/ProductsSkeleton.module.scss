@@ -21,7 +21,21 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
 
+.block {
+  border-radius: $radius-s;
+  background: linear-gradient(
+    90deg,
+    $color-line 25%,
+    $color-paper 37%,
+    $color-line 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.card {
   &__image {
     aspect-ratio: 1;
     margin-bottom: 4px;
@@ -48,19 +62,6 @@
     margin-top: auto;
   }
 }
-
-.block {
-  border-radius: $radius-s;
-  background: linear-gradient(
-    90deg,
-    $color-line 25%,
-    $color-paper 37%,
-    $color-line 63%
-  );
-  background-size: 400% 100%;
-  animation: shimmer 1.4s ease infinite;
-}
-
 
 @keyframes shimmer {
   0% {

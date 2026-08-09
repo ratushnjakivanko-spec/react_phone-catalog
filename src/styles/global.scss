@@ -1,28 +1,34 @@
-@import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import './variables';
 
+// "Original Dark" palette, sampled directly from the Figma export
+// (UI Kit / Header / Footer / Product card / Cart item frames).
 :root {
+  --color-paper: #0f1121; // page background
+  --color-surface: #161827; // card / panel surface
+  --color-ink: #ffffff; // primary text
+  --color-ink-secondary: #75767f; // secondary/muted text
+  --color-line: #323542; // borders, dividers
+  --color-signal: #905bff; // primary accent (buttons, links, active states)
+  --color-signal-dark: #a378ff; // accent hover
+  --color-signal-pressed: #6341b2; // accent active/pressed
+  --color-discount: #eb5757;
+  --color-success: #27ae60;
+  --color-icon: #b4bdc3;
+}
+
+:root[data-theme='light'] {
   --color-paper: #f6f5f2;
-  --color-surface: #fff;
+  --color-surface: #ffffff;
   --color-ink: #14161a;
   --color-ink-secondary: #6d7078;
   --color-line: #e1dfda;
-  --color-signal: #3a4cf0;
-  --color-signal-dark: #2c3adf;
+  --color-signal: #905bff;
+  --color-signal-dark: #7c3fff;
+  --color-signal-pressed: #6341b2;
   --color-discount: #d64d3f;
   --color-success: #1f9d55;
-}
-
-:root[data-theme='dark'] {
-  --color-paper: #16171b;
-  --color-surface: #202226;
-  --color-ink: #f2f1ee;
-  --color-ink-secondary: #9a9da5;
-  --color-line: #34363c;
-  --color-signal: #6675ff;
-  --color-signal-dark: #7e8bff;
-  --color-discount: #e8695a;
-  --color-success: #35b46a;
+  --color-icon: #75767f;
 }
 
 * {
@@ -109,7 +115,7 @@ img {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }

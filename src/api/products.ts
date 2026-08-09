@@ -42,6 +42,7 @@ async function fetchJson<T>(fileName: string): Promise<T> {
 function mapSummary(raw: RawProductSummary): Product {
   return {
     id: raw.itemId,
+    numericId: raw.id,
     category: raw.category,
     name: raw.name,
     fullPrice: raw.fullPrice,

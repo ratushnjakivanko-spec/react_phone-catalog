@@ -9,6 +9,8 @@ type Slide = {
   eyebrow: string;
   title: string;
   cta: string;
+  caption: string;
+  captionSub: string;
   image: string;
   link: string;
 };
@@ -19,6 +21,8 @@ const SLIDES: Slide[] = [
     eyebrow: 'Now available in our store!',
     title: 'The lineup that\u2019s worth the upgrade',
     cta: 'Shop phones',
+    caption: 'New phones',
+    captionSub: 'Beyond ordinary.',
     image: 'img/banner-phones.png',
     link: '/phones',
   },
@@ -27,6 +31,8 @@ const SLIDES: Slide[] = [
     eyebrow: 'Work anywhere',
     title: 'Tablets built for your whole day',
     cta: 'Shop tablets',
+    caption: 'New tablets',
+    captionSub: 'Room to work.',
     image: 'img/banner-tablets.png',
     link: '/tablets',
   },
@@ -35,6 +41,8 @@ const SLIDES: Slide[] = [
     eyebrow: 'Finishing touches',
     title: 'Accessories that complete the set',
     cta: 'Shop accessories',
+    caption: 'New accessories',
+    captionSub: 'Small extras, big difference.',
     image: 'img/banner-accessories.png',
     link: '/accessories',
   },
@@ -89,6 +97,13 @@ export const PicturesSlider: React.FC = () => {
             </div>
 
             <Link to={slide.link} className={styles.slider__imageLink}>
+              <div className={styles.slider__caption}>
+                <p className={styles.slider__captionTitle}>{slide.caption}</p>
+                <p className={styles.slider__captionSub}>
+                  {slide.captionSub}
+                </p>
+              </div>
+
               <img
                 className={styles.slider__image}
                 src={getImageUrl(slide.image)}

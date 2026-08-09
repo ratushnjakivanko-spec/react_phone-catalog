@@ -123,6 +123,8 @@ export const ProductDetailsPage: React.FC = () => {
         </div>
 
         <div className={styles.page__buy}>
+          <p className={styles.page__id}>{`ID: ${summary?.numericId ?? ''}`}</p>
+
           <ColorSelector
             colors={product.colorsAvailable}
             selected={product.color}
@@ -151,7 +153,7 @@ export const ProductDetailsPage: React.FC = () => {
               }`}
               onClick={() => summary && addToCart(summary)}
             >
-              {inCart ? 'Added to cart' : 'Add to cart'}
+              {inCart ? 'Added' : 'Add to cart'}
             </button>
 
             <button

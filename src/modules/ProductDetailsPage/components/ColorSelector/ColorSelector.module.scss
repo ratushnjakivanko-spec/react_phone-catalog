@@ -29,10 +29,12 @@
     border-radius: 50%;
     border: 2px solid $color-surface;
     box-shadow: 0 0 0 1px $color-line;
-    transition: box-shadow $transition;
+    transition: outline-color $transition;
+    outline: 2px dashed transparent;
+    outline-offset: 3px;
 
     &--active {
-      box-shadow: 0 0 0 2px $color-signal;
+      outline-color: $color-signal;
     }
   }
 }

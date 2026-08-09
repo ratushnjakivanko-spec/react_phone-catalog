@@ -26,8 +26,9 @@
     font-family: $font-display;
     font-weight: 700;
     font-size: 20px;
+    line-height: 1.2;
     letter-spacing: 0.04em;
-    color: $color-signal-dark;
+    color: $color-ink;
     flex-shrink: 0;
   }
 
@@ -124,22 +125,68 @@
     }
   }
 
-  &__mobileNav {
+  &__mobileOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: $color-paper;
     display: flex;
     flex-direction: column;
-    border-top: 1px solid $color-line;
 
     @media (min-width: $breakpoint-tablet) {
       display: none;
     }
   }
 
-  &__mobileNavLink,
+  &__mobileTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    flex-shrink: 0;
+  }
+
+  &__mobileNav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
   &__mobileLink {
-    padding: 14px 16px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    border-bottom: 1px solid $color-line;
+    color: $color-ink-secondary;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+
+    &--active {
+      color: $color-ink;
+      border-color: $color-signal;
+    }
+  }
+
+  &__mobileBottom {
+    display: flex;
+    border-top: 1px solid $color-line;
+    flex-shrink: 0;
+  }
+
+  &__mobileIconLink {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    color: $color-ink-secondary;
+    border-right: 1px solid $color-line;
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }

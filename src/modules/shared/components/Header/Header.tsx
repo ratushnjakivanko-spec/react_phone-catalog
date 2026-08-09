@@ -108,24 +108,64 @@ export const Header = () => {
             aria-label="Menu"
             onClick={() => setMenuOpen(open => !open)}
           >
-            <Icon name={menuOpen ? 'close' : 'menu'} />
+            <Icon name="menu" />
           </button>
         </div>
       </div>
 
       {menuOpen && (
-        <nav className={styles.header__mobileNav}>
-          {NAV_LINKS.map(link => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={styles.header__mobileLink}
+        <div className={styles.header__mobileOverlay}>
+          <div className={`container ${styles.header__mobileTop}`}>
+            <NavLink to="/" className={styles.header__logo}>
+              NICE GADGETS
+            </NavLink>
+
+            <button
+              type="button"
+              className={styles.header__menuButton}
+              aria-label="Close menu"
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              <Icon name="close" />
+            </button>
+          </div>
+
+          <nav className={styles.header__mobileNav}>
+            {NAV_LINKS.map(link => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `${styles.header__mobileLink} ${
+                    isActive ? styles['header__mobileLink--active'] : ''
+                  }`
+                }
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className={styles.header__mobileBottom}>
+            <NavLink
+              to="/favorites"
+              className={styles.header__mobileIconLink}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Favorites"
+            >
+              <Icon name="heart" />
             </NavLink>
-          ))}
-        </nav>
+            <NavLink
+              to="/cart"
+              className={styles.header__mobileIconLink}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Cart"
+            >
+              <Icon name="cart" />
+            </NavLink>
+          </div>
+        </div>
       )}
     </header>
   );

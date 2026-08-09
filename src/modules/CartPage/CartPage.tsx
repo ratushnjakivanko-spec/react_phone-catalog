@@ -1,9 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
+import { Icon } from '../shared/components/Icon';
 import { EmptyMessage } from '../shared/components/RequestStatus';
 import { CartItemRow } from './components/CartItemRow';
 import styles from './CartPage.module.scss';
 
 export const CartPage: React.FC = () => {
+  const navigate = useNavigate();
   const { cartItems, totalQuantity, totalPrice, clearCart } = useCart();
 
   const handleCheckout = () => {
@@ -18,6 +21,15 @@ export const CartPage: React.FC = () => {
 
   return (
     <div className={`container ${styles.page}`}>
+      <button
+        type="button"
+        className={styles.page__back}
+        onClick={() => navigate(-1)}
+      >
+        <Icon name="arrow-left" />
+        Back
+      </button>
+
       <h1 className={styles.page__title}>Cart</h1>
 
       {cartItems.length === 0 ? (
