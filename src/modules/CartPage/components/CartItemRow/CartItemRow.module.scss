@@ -56,9 +56,15 @@
     justify-content: center;
     border: 1px solid $color-line;
     border-radius: 50%;
-  &:disabled {
+
+    &:disabled {
       opacity: 0.3;
       cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      border-color: $color-signal;
+      color: $color-signal;
     }
   }
 

@@ -13,12 +13,22 @@ $color-signal-pressed: var(--color-signal-pressed);
 $color-discount: var(--color-discount);
 $color-success: var(--color-success);
 $color-icon: var(--color-icon);
+
+// Typography
 $font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-mono: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Layout
 $width-content: 1200px;
+
+// Radii
 $radius-s: 4px;
 $radius-m: 8px;
+
+// Motion
 $transition: 0.2s ease;
+
+// Breakpoints
 $breakpoint-tablet: 640px;
 $breakpoint-desktop: 1024px;

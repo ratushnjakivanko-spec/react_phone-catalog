@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useCart } from '../../../../contexts/CartContext';
 import { useFavorites } from '../../../../contexts/FavoritesContext';
-import { useTheme } from '../../../../contexts/ThemeContext';
 import { Icon } from '../Icon';
-import { SearchField } from '../SearchField';
 import styles from './Header.module.scss';
 
 const NAV_LINKS = [
@@ -14,25 +12,20 @@ const NAV_LINKS = [
   { to: '/accessories', label: 'Accessories' },
 ];
 
-const SEARCHABLE_PATHS = ['/phones', '/tablets', '/accessories', '/favorites'];
-
 export const Header = () => {
   const { totalQuantity } = useCart();
   const { favorites } = useFavorites();
-  const { theme, toggleTheme } = useTheme();
-  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const showSearch = SEARCHABLE_PATHS.some(path =>
-    location.pathname.startsWith(path),
-  );
 
   return (
     <header className={styles.header}>
       <div className={`container ${styles.header__inner}`}>
         <div className={styles.header__left}>
           <NavLink to="/" className={styles.header__logo}>
-            NICE GADGETS
+            NICE
+            <span aria-hidden="true">👌</span>
+            <br />
+            GADGETS
           </NavLink>
 
           <nav className={styles.header__nav}>
@@ -53,25 +46,6 @@ export const Header = () => {
         </div>
 
         <div className={styles.header__right}>
-          {showSearch && (
-            <div className={styles.header__search}>
-              <SearchField />
-            </div>
-          )}
-
-          <button
-            type="button"
-            className={styles.header__iconLink}
-            aria-label={
-              theme === 'light'
-                ? 'Switch to dark theme'
-                : 'Switch to light theme'
-            }
-            onClick={toggleTheme}
-          >
-            <Icon name={theme === 'light' ? 'moon' : 'sun'} />
-          </button>
-
           <NavLink
             to="/favorites"
             className={({ isActive }) =>
@@ -117,7 +91,10 @@ export const Header = () => {
         <div className={styles.header__mobileOverlay}>
           <div className={`container ${styles.header__mobileTop}`}>
             <NavLink to="/" className={styles.header__logo}>
-              NICE GADGETS
+              NICE
+              <span aria-hidden="true">👌</span>
+              <br />
+              GADGETS
             </NavLink>
 
             <button

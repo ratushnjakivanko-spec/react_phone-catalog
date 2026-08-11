@@ -33,6 +33,7 @@ export const HomePage: React.FC = () => {
   return (
     <div className={`container ${styles.homePage}`}>
       <h1 className="visually-hidden">Product Catalog</h1>
+      <p className={styles.homePage__welcome}>Welcome to Nice Gadgets store!</p>
 
       <PicturesSlider />
 
@@ -41,9 +42,9 @@ export const HomePage: React.FC = () => {
 
       {products && (
         <>
-          <ProductsSlider title="Hot prices" products={hotPrices} />
-          <ShopByCategory products={products} />
           <ProductsSlider title="Brand new models" products={brandNew} />
+          <ShopByCategory products={products} />
+          <ProductsSlider title="Hot prices" products={hotPrices} />
         </>
       )}
     </div>

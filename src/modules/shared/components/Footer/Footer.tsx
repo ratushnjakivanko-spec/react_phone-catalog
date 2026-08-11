@@ -9,7 +9,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footer__inner}`}>
-        <span className={styles.footer__logo}>NICE GADGETS</span>
+        <span className={styles.footer__logo}>
+          NICE
+          <span aria-hidden="true">👌</span>
+          <br />
+          GADGETS
+        </span>
 
         <nav className={styles.footer__nav}>
           <a

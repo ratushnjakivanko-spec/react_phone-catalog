@@ -68,6 +68,8 @@
     padding: 10px 24px;
     font-size: 13px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
     color: $color-ink;
     transition: border-color $transition, background $transition;
 
