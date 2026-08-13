@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Icon } from '../../../shared/components/Icon';
-import { getImageUrl } from '../../../../utils/getImageUrl';
 import styles from './PicturesSlider.module.scss';
 
 type Slide = {
@@ -15,15 +14,17 @@ type Slide = {
   link: string;
 };
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const SLIDES: Slide[] = [
   {
     id: 'phones',
     eyebrow: 'Now available in our store!',
-    title: 'The lineup that\u2019s worth the upgrade',
+    title: 'The lineup that’s worth the upgrade',
     cta: 'Shop phones',
     caption: 'New phones',
     captionSub: 'Beyond ordinary.',
-    image: 'img/banner-phones.png',
+    image: `${BASE_URL}img/banner-phones.png`,
     link: '/phones',
   },
   {
@@ -33,7 +34,7 @@ const SLIDES: Slide[] = [
     cta: 'Shop tablets',
     caption: 'New tablets',
     captionSub: 'Room to work.',
-    image: 'img/banner-tablets.png',
+    image: `${BASE_URL}img/banner-tablets.png`,
     link: '/tablets',
   },
   {
@@ -43,7 +44,7 @@ const SLIDES: Slide[] = [
     cta: 'Shop accessories',
     caption: 'New accessories',
     captionSub: 'Small extras, big difference.',
-    image: 'img/banner-accessories.png',
+    image: `${BASE_URL}img/banner-accessories.png`,
     link: '/accessories',
   },
 ];
@@ -102,11 +103,7 @@ export const PicturesSlider: React.FC = () => {
                 <p className={styles.slider__captionSub}>{slide.captionSub}</p>
               </div>
 
-              <img
-                className={styles.slider__image}
-                src={getImageUrl(slide.image)}
-                alt=""
-              />
+              <img className={styles.slider__image} src={slide.image} alt="" />
             </Link>
           </div>
         ))}
