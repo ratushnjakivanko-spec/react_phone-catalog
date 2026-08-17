@@ -99,9 +99,7 @@ export const PicturesSlider: React.FC = () => {
             <Link to={slide.link} className={styles.slider__imageLink}>
               <div className={styles.slider__caption}>
                 <p className={styles.slider__captionTitle}>{slide.caption}</p>
-                <p className={styles.slider__captionSub}>
-                  {slide.captionSub}
-                </p>
+                <p className={styles.slider__captionSub}>{slide.captionSub}</p>
               </div>
 
               <img
