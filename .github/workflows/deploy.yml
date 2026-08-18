@@ -2,7 +2,11 @@
 
 on:
   push:
+<<<<<<< HEAD
     branches: [main, master, develop]
+=======
+    branches: [main, develop]
+>>>>>>> 4da816090016efde8ef5bffc56f90a03669c2e40
 
 permissions:
   contents: read
