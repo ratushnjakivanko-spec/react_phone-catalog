@@ -12,7 +12,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
     <ThemeProvider>
       <CartProvider>
         <FavoritesProvider>
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
             <App />
           </BrowserRouter>
         </FavoritesProvider>
