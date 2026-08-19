@@ -14,8 +14,8 @@ export const Breadcrumbs: React.FC<Props> = ({
   productName,
 }) => (
   <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-    <Link to="/" className={styles.breadcrumbs__link}>
-      Home
+    <Link to="/" className={styles.breadcrumbs__link} aria-label="Home">
+      <Icon name="home" />
     </Link>
 
     <Icon name="chevron-right" className={styles.breadcrumbs__sep} />

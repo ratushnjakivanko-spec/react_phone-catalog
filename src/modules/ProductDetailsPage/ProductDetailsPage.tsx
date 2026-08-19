@@ -56,6 +56,10 @@ export const ProductDetailsPage: React.FC = () => {
     }
   }, [product]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [productId]);
+
   // selecting a color/capacity on this dataset means navigating to the
   // sibling product that already has that combination
   const goToVariant = (nextColor: string, nextCapacity: string) => {
@@ -71,7 +75,7 @@ export const ProductDetailsPage: React.FC = () => {
     }
   };
 
-  if (loading) {
+  if (loading && !product) {
     return (
       <div className="container">
         <Loader />
@@ -109,7 +113,7 @@ export const ProductDetailsPage: React.FC = () => {
       <button
         type="button"
         className={styles.page__back}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate(`/${product.category}`)}
       >
         <Icon name="arrow-left" />
         Back

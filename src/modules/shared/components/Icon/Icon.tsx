@@ -13,7 +13,8 @@ export type IconName =
   | 'minus'
   | 'arrow-up'
   | 'sun'
-  | 'moon';
+  | 'moon'
+  | 'home';
 
 type Props = {
   name: IconName;
@@ -161,6 +162,16 @@ const paths: Record<IconName, React.ReactNode> = {
       fill="none"
       stroke="currentColor"
       strokeWidth="1.6"
+      strokeLinejoin="round"
+    />
+  ),
+  home: (
+    <path
+      d="M4 11.5 12 4l8 7.5M6 10v9a1 1 0 0 0 1 1h4v-6h2v6h4a1 1 0 0 0 1-1v-9"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
       strokeLinejoin="round"
     />
   ),
